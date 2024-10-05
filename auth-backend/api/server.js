@@ -24,6 +24,5 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/attendance', attendanceRoutes);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// No need for app.listen() in Vercel's serverless environment
+module.exports = app;

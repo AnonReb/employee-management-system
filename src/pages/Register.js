@@ -1,4 +1,5 @@
 // src/pages/Register.js
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -40,7 +41,8 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      // Use environment variable for API URL
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
         username,
         email,
         password,

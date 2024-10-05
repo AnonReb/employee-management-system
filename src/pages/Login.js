@@ -17,35 +17,40 @@ const Login = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      // Use environment variable for API URL
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
         email,
         password,
       });
 
-      setLoading(false);
-      // Assuming the response contains a user object and token
-      const { user, token } = response.data;
+      console.log('API Response:', response.data); // For debugging
 
-       console.log('API Response:', response.data); // Add this to check the response
-
+      // Reset loading state
       setLoading(false);
 
       // Check if the response contains user and token
       if (response.data && response.data.user && response.data.token) {
         const { user, token } = response.data;
 
-         // Store user data and token
-         localStorage.setItem('user', JSON.stringify(user));
-         localStorage.setItem('token', token);
-   
-         // Redirect to home page
-         navigate('/');
+        // Store user data and token in localStorage
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('token', token);
+
+        // Redirect to the home page after login
+        navigate('/');
       } else {
-         setMessage('Invalid response from server');
+        setMessage('Invalid response from the server');
       }
     } catch (error) {
       setLoading(false);
-      setMessage('Login failed. Please check your credentials and try again.');
+      console.error('Error:', error.response);
+
+      // Provide more specific error feedback if the server returns an error message
+      if (error.response && error.response.data && error.response.data.message) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage('Login failed. Please check your credentials and try again.');
+      }
     }
   };
 
