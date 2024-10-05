@@ -3,18 +3,18 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
-      "axios": "^0.27.2",                  // For API calls
-      "react": "^17.0.2",                  // React core library
-      "react-dom": "^17.0.2",              // For rendering components
-      "react-router-dom": "^6.3.0",        // For routing between pages (Login, Register, Home)
-      "react-scripts": "4.0.3",            // Scripts to manage React build and start commands
-      "dotenv": "^10.0.0"                  // To manage environment variables like REACT_APP_API_URL
+      "axios": "^0.27.2",                  
+      "react": "^17.0.2",                  
+      "react-dom": "^17.0.2",              
+      "react-router-dom": "^6.3.0",        
+      "react-scripts": "4.0.3",            
+      "dotenv": "^10.0.0"                  
     },
     "scripts": {
-      "start": "react-scripts start",      // To start the development server
-      "build": "react-scripts build",      // To build for production
-      "test": "react-scripts test",        // To run tests
-      "eject": "react-scripts eject"       // To expose hidden configurations (use cautiously)
+      "start": "react-scripts start",      
+      "build": "react-scripts build",      
+      "test": "react-scripts test",        
+      "eject": "react-scripts eject"       
     },
     "eslintConfig": {
       "extends": [
