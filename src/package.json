@@ -1,0 +1,38 @@
+{
+    "name": "employee-management-system-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "axios": "^0.27.2",                  // For API calls
+      "react": "^17.0.2",                  // React core library
+      "react-dom": "^17.0.2",              // For rendering components
+      "react-router-dom": "^6.3.0",        // For routing between pages (Login, Register, Home)
+      "react-scripts": "4.0.3",            // Scripts to manage React build and start commands
+      "dotenv": "^10.0.0"                  // To manage environment variables like REACT_APP_API_URL
+    },
+    "scripts": {
+      "start": "react-scripts start",      // To start the development server
+      "build": "react-scripts build",      // To build for production
+      "test": "react-scripts test",        // To run tests
+      "eject": "react-scripts eject"       // To expose hidden configurations (use cautiously)
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+   
